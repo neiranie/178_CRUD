@@ -49,15 +49,15 @@ app.get('/biodata/:id', async (req, res) => {
 
 app.post('/biodata', async (req, res) => {
     try {
-        const { nim, nama, alamat, jurusan } = req.body;
+        const { nama, nim, kelas } = req.body;
 
         if (!nim || !nama) {
             return res.status(400).json({ message: "Field nim dan nama wajib diisi" });
         }
 
         const result = await pool.query(
-            "INSERT INTO biodata (nim, nama, alamat, jurusan) VALUES ($1, $2, $3, $4) RETURNING *",
-            [nim, nama, alamat, jurusan]
+            "INSERT INTO biodata (nama, nim, kelas) VALUES ($1, $2, $3) RETURNING *",
+            [nama, nim, kelas]
         );
 
         res.status(201).json({
@@ -73,15 +73,15 @@ app.post('/biodata', async (req, res) => {
 app.put('/biodata/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const { nim, nama, alamat, jurusan } = req.body;
+        const { nama, nim, kelas } = req.body;
 
         if (!nim || !nama) {
             return res.status(400).json({ message: "Field nim dan nama wajib diisi" });
         }
 
         const result = await pool.query(
-            "UPDATE biodata SET nim = $1, nama = $2, alamat = $3, jurusan = $4 WHERE id = $5 RETURNING *",
-            [nim, nama, alamat, jurusan, id]
+            "UPDATE biodata SET nama = $1, nim = $2, kelas = $3 WHERE id = $4 RETURNING *",
+            [nama, nim, kelas, id]
         );
 
         if (result.rows.length === 0) {
