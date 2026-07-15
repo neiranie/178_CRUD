@@ -1,5 +1,6 @@
 **GET**
 <img width="3072" height="1920" alt="image" src="https://github.com/user-attachments/assets/7697f5cf-a329-442d-81d6-af20864583e3" />
+<img width="3072" height="1920" alt="image" src="https://github.com/user-attachments/assets/15290175-f723-4184-ace3-52fbfa7d2e37" />
 
 **POST**
 <img width="3072" height="1920" alt="image" src="https://github.com/user-attachments/assets/74ad7d43-9c00-490e-af21-6de430718b6f" />
